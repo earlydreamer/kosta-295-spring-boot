@@ -24,8 +24,8 @@ public interface BoardRepository extends JpaRepository<Board, Long> {
      *
      */
 
-//    @Query(value= "select b from Board b where b.id=?1 or b.title=?2")
-    @Query(value = "select * from board where id=?1 or title like ?2", nativeQuery=true)
+    @Query(value= "select b from Board b where b.id=?1 or b.title=?2")
+//  @Query(value = "select * from board where id=?1 or title like ?2", nativeQuery=true)
     List<Board> findByNoOrTitleTest(Long id, String title);
 
     Long id(Long id);
@@ -35,7 +35,7 @@ public interface BoardRepository extends JpaRepository<Board, Long> {
      */
 
     @Query(value=
-            "select b from Board b where b.id=:#{$board.id} or b.title=:#{$board.title} or b.writer=:#{$board.writer}"
+            "select b from Board b where b.id=:#{#board.id} or b.title=:#{#board.title} or b.writer=:#{#board.writer}"
     )
     List<Board> findByWhere(@Param("board") Board board);
 
