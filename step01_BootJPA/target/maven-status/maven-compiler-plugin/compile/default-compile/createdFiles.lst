@@ -1,0 +1,7 @@
+web\mvc\service\BoardServiceImpl.class
+web\mvc\domain\Board.class
+web\mvc\Step01BootJpaApplication.class
+web\mvc\repository\BoardRepository.class
+web\mvc\domain\QBoard.class
+web\mvc\service\BoardService.class
+web\mvc\domain\Board$BoardBuilder.class
