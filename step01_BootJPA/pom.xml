@@ -19,7 +19,9 @@
 
     <properties>
         <java.version>17</java.version>
+        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
         <querydsl.version>5.0.0</querydsl.version>
+        <jakarta-persistence-api.version>3.1.0</jakarta-persistence-api.version>
     </properties>
 
     <dependencies>
@@ -100,7 +102,7 @@
                     <path>
                         <groupId>jakarta.persistence</groupId>
                         <artifactId>jakarta.persistence-api</artifactId>
-                        <version>3.1.0</version>
+                        <version>${jakarta-persistence-api.version}</version>
                     </path>
                 </annotationProcessorPaths>
                 <generatedSourcesDirectory>${project.build.directory}/generated-sources/annotations</generatedSourcesDirectory>

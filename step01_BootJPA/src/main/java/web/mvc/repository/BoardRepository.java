@@ -3,12 +3,13 @@ package web.mvc.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.data.repository.query.Param;
 import web.mvc.domain.Board;
 
 import java.util.List;
 
-public interface BoardRepository extends JpaRepository<Board, Long> {
+public interface BoardRepository extends JpaRepository<Board, Long> , QuerydslPredicateExecutor<Board> {
 
     /**
      * 글번호를 인수로 받아 인수보다 큰 레코드를 삭제
@@ -42,6 +43,9 @@ public interface BoardRepository extends JpaRepository<Board, Long> {
 
     List<Board> findByIdLessThanAndWriter(long id, String writer);
     List<Board> findByIdLessThanOrWriter(long l, String writer);
+
+
+
 }
 
 
